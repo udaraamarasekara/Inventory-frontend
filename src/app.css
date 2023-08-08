@@ -1,0 +1,20 @@
+.navbar-brand-custom {
+    width: 100%;
+    text-align: center;
+    font-size:3vw;
+  }
+  .card-text{
+    font-size:2.5vw;
+    color: aliceblue;
+    height:10vw;
+  }
+  .card-hover-curser:hover{
+    cursor:pointer;
+  }
+  .remove-underline{
+    text-decoration: none;
+  }
+  .barChart {
+    font-family: sans-serif;
+    text-align: center;
+  }
