@@ -1,0 +1,131 @@
+.SelectIcon{
+    float: left;
+    background-color:#E6EEFF;
+    padding-left:7%;
+    margin-right:7%;
+    height:3vh;
+    margin-top: 6%;
+    color: rgba(0,0,0,0.5);
+  
+  }
+  .Select{
+    
+    display: flex;
+    flex-direction: row;
+    background-color:#E6EEFF;
+    width:80%;
+    border-radius:5px 5px 0 0;
+    margin-left:7%;
+    padding-right:3%;
+    padding-left:3%;
+    margin-top:3%;
+    height: 6vh;
+    border-radius:5px;
+  
+  }
+  .options{
+    width:86%;
+    background-color: white;
+    height:140px;
+    margin-left:7%;
+    margin-right:3%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation: fadeIn 0.6s ease-in; 
+    position: fixed;
+  }
+  
+  @keyframes fadeIn {  
+    from {  
+        height:0;  
+    }  
+  
+    to {  
+        height:140px;  
+    }  
+  }
+  
+  @keyframes fadeOut {  
+    from {  
+        height:140px;  
+  
+    }  
+  
+    to {  
+      height:0;  
+    } 
+     
+  }
+  
+  
+  @keyframes fadeIt {  
+    from {  
+        display:block;  
+  
+    }  
+  
+    to {  
+      display:none;  
+  
+    } 
+     
+  }
+  
+  .fOut{
+    width:86%;
+    background-color: white;
+    height:0;
+    margin-left:7%;
+    margin-right:3%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation: fadeOut 0.6s ease-in;
+    position: fixed;
+  }
+  
+  .SelectActive{
+    display: flex;
+    flex-direction: row;
+    background-color:#E6EEFF;
+    width:80%;
+    border-radius:5px 5px 0 0;
+    margin-left:7%;
+    padding-right:3%;
+    padding-left:3%;
+    margin-top:3%;
+    height: 6vh;
+  }
+  .TurnedIcon{
+    padding-right: 2%;
+    rotate: 180deg;
+    width:6%;
+    height: auto;
+    opacity: 50%;
+  }
+  .NormalIcon{
+    padding-right: 2%;
+    width:6%;
+    height: auto;
+    opacity: 50%;
+  }
+  .option{
+    padding-top:2%;
+    padding-bottom:2%;
+    margin: 0%;
+  }
+  .option:hover{
+    background-color: #E6EEFF;
+  }
+  .optionText{
+    padding-left: 3%;
+  
+  }
+  .SelectedDiv{
+    padding-right: 2%;
+    padding-top: 4%;
+    width:94%;
+    height: auto;
+    font-size: larger;
+    float: center;
+    text-align: center;
+    opacity: 50%;
+  }
+  

@@ -10,6 +10,7 @@
 
    color:white;
    position: relative;
+   margin-top:5%;
    top:5%;
    width:30%;
    text-align: center;
@@ -30,17 +31,34 @@
 
  
 } 
+.Button{
+   position: relative;
+   background-color: #00FF00;
+   color: #006400; 
+   height:5%;
+   outline:none;
+   border:3px solid #00FF00;
+   font-size: large;
+   box-sizing:content-box;
+   padding-left:1.5%;
+   padding-right:1.5%;
+
+}
 @media only screen and (min-width: 768px) {
    .Input{
     left:32.5%;
-    width:35%;
+    width:32%;
     margin-top:1%;
     margin-bottom:1%;
    }
    .Heading{
     font-size:5vw;
-
-}
+   }
+   .Button{
+    left:40.5%;
+    width:17%;
+    margin-top:3%;
+   }
 }
 @media only screen and (max-width: 768px) {
     .Input{
@@ -55,5 +73,10 @@
         font-size:8vw;
 
     }
+    .Button{
+        left:12.5%;
+        width:75%;
+        margin-top:7%;
+       }
  }
  
