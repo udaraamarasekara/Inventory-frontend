@@ -1,12 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import './CustomSelect.css';
+import styles from './CustomSelect.module.css';
 import { useRef, useState } from 'react';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
 function CustomSelect({optionData,setCurrentVal}){
 const [name,setName]=useState(optionData[0]);
 const [SelectActive,setSelectActive]=useState(false);
-const [options,setOptions]=useState("options");
+const [options,setOptions]=useState(styles.options);
 const [visible,setVisible]=useState('none');
 const [arrowIcon,setArrowIcon]=useState(false);
 const clicked=useRef(false);
@@ -14,7 +14,7 @@ const clicked=useRef(false);
 document.onclick=(e)=>{
 if(clicked.current && !clicked.current.contains(e.target)){
   setArrowIcon(false);
-  setOptions('fOut');
+  setOptions(styles.fOut);
   setVisible('none');
   window.setTimeout(function () {
     setSelectActive(false);
@@ -35,7 +35,7 @@ const toggle=()=>
   setArrowIcon(!arrowIcon);
   if(SelectActive)
   {
-    setOptions('fOut');
+    setOptions(styles.fOut);
     setVisible('none');
     window.setTimeout(function () {
       setSelectActive(false);
@@ -43,7 +43,7 @@ const toggle=()=>
     // do stuff after animation has finished here
 }, 600);
   }else{
-    setOptions('options');
+    setOptions(styles.options);
     setSelectActive(true);
     window.setTimeout(function () {
       setVisible('block');
@@ -56,17 +56,17 @@ const toggle=()=>
 
 return(
 <div ref={clicked} onClick={toggle} >
-<div className={SelectActive ? 'SelectActive':'Select'}>
-  <div className='SelectedDiv' >{name}</div>
-  <FontAwesomeIcon  className={arrowIcon ? 'TurnedIcon':'NormalIcon'} icon={faCaretDown}></FontAwesomeIcon>
+<div className={SelectActive ? styles.SelectActive:styles.Select}>
+  <div className={styles.SelectedDiv} >{name}</div>
+  <FontAwesomeIcon  className={arrowIcon ? styles.TurnedIcon:styles.NormalIcon} icon={faCaretDown}></FontAwesomeIcon>
  
 </div>
 {SelectActive && 
 <div  className={options} >
     { optionData.map(element => {
       return(
-      <div key={element} className='option'>
-        <div style={{display:`${visible}`}} className='optionText' onClick={()=>changeValue(element)} >{element}</div> 
+      <div key={element} className={styles.option}>
+        <div style={{display:`${visible}`}} className={styles.optionText} onClick={()=>changeValue(element)} >{element}</div> 
       </div> );  
     })
     

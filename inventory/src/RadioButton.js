@@ -1,15 +1,15 @@
-import './RadioButton.css';
+import styles from './RadioButton.module.css';
 
 function RadioButton({text,setName,name,value}){
 
   return(
-    <div className="RadioButtonContainer" >
-        <div  onClick={()=>{setName(value)}} className="RadioButton">
+    <div className={styles.RadioButtonContainer} >
+        <div  onClick={()=>{setName(value)}} className={styles.RadioButton}>
             {
-             name===value &&  <div className="ActiveRadioButton" ></div>  
+             name===value &&  <div className={styles.ActiveRadioButton} ></div>  
             }
         </div>
-        <div className="Label" >{text}</div>
+        <div className={styles.Label} >{text}</div>
        
     </div>
   );
