@@ -35,6 +35,9 @@
   border-radius:15px;
   text-align: center;
   font-size: larger;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
 
 }
 @media only screen and (max-width: 768px) {
@@ -51,8 +54,8 @@
   }
   .Card{
     height:100px;
-    padding-top: 16px;
-
+    padding-top: 8px;
+    padding-bottom:8px;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -67,7 +70,18 @@
   
   }
   .Card{
-    padding-top: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     height:140px;
   }
+
+  
+}
+.CardText{
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+  margin-bottom:0;
+  width: 100%;
 }

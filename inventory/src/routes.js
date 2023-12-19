@@ -1,27 +1,19 @@
 import AdminDashboard from './AdminDashboard';
-import { createBrowserRouter } from 'react-router-dom';
+import { Route, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 import AdminPortal from './AdminPortal';
 import Login from './Login';
-   
-  const routes = createBrowserRouter([
-    localStorage.getItem('auth') ? {
-        path: "/",
-        element: <AdminPortal />,
-        children: [
-          {
-            path: "/dashboard",
-            element:<AdminDashboard/>,
-          },
-         
-        ],
-      }:
-      {
-        path: "*",
-        element: <Login/>,
-      },
-      {
-        path: "*",
-        element: <Login/>,
-      }
-    ]);
+import  * as All  from './requests';   
+import ProtectedRoutes from './ProtectedRoutes';
+  const routes = createBrowserRouter(
+    createRoutesFromElements(
+    <>
+      <Route path='/' element={<ProtectedRoutes/>}>
+        <Route path='/' element={<AdminPortal/>}>
+          <Route loader={All.goodsCount} path='/dashboard'  element={<AdminDashboard/>}/>
+        </Route>
+      </Route>
+      <Route path='*' element={<Login/>}/>
+    </>
+    )
+  );
     export default routes;

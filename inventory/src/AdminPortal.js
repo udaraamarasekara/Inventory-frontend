@@ -1,10 +1,17 @@
 import styles from './AdminPortal.module.css';
-import {Link,Outlet,useLocation} from "react-router-dom";
+import {Outlet,useLocation, useNavigate} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
+import { logOut } from './requests';
 function AdminPortal() {
   let location=useLocation();  
+  const nav = useNavigate();
+
+  const logoutUser =() =>{
+   logOut(); 
+   nav('/login'); 
+  }
 
   const [mobileNavShow,setMobileNavShow]=useState(false);
   return (
@@ -41,7 +48,7 @@ function AdminPortal() {
               <FontAwesomeIcon onClick={()=>setMobileNavShow(!mobileNavShow)} className={styles.MenuIcon} icon={faBars}></FontAwesomeIcon>
              )  
             }
-            <Link className={styles.Logout} to="/">Logout</Link>
+            <div className={styles.Logout} onClick={logoutUser}>Logout</div>
          </div>
          {
           window.innerWidth < 768 && mobileNavShow &&  

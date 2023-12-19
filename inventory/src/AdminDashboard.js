@@ -1,12 +1,12 @@
 import styles from './AdminDashboard.module.css';
+import AutocompleteSearch from './AutocompleteSearch';
 import CustomSelect from './CustomSelect';
 import RadioButton from './RadioButton';
 import {useState } from 'react';
-
+import { useLoaderData } from 'react-router-dom';
 function AdminDashboard() {
-
+  const availableProducts=useLoaderData();
   const [name,setName]=useState("All");
-
   return (
    <div>
     { window.innerWidth > 768 ?(
@@ -31,21 +31,22 @@ function AdminDashboard() {
       (
        <div> 
         <CustomSelect setCurrentVal={setName} optionData={['All','Projects','People','Products']} />
-        <input type="text" placeholder="Search" className={styles.Input}></input>
+        <AutocompleteSearch/>
        </div>
       )} 
       <div className={styles.CardsArea}>
         <div className={styles.Card}>
-          <h2>Available Products</h2>  
+          <h2 className={styles.CardText} >{availableProducts?.success}</h2>
+          <h2 className={styles.CardText}  >Available Products</h2>  
         </div>
         <div className={styles.Card}>
-          <h2>Connected People</h2>  
+          <h2 className={styles.CardText}>Connected People</h2>  
         </div>
         <div className={styles.Card}>
-          <h2>Ongoing Projects</h2>  
+          <h2 className={styles.CardText}>Ongoing Projects</h2>  
         </div>
         <div className={styles.Card}>
-          <h2>Properties</h2>    
+          <h2 className={styles.CardText}>Properties</h2>    
         </div>
       </div>
     </div>   

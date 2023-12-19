@@ -45,6 +45,10 @@
 
 }
 
+.Button:hover{
+  cursor: pointer;
+}
+
 @media only screen and (min-width: 768px) {
    .Input{
     left:32.5%;
@@ -120,5 +124,14 @@
         display: none;
         height: max-content;
       }
+
+   
  }
- 
+ .Input::placeholder {
+    color: white;
+    opacity: 1; /* Firefox */
+  }
+  
+  .Input::-ms-input-placeholder { /* Edge 12 -18 */
+    color: white;
+  }
