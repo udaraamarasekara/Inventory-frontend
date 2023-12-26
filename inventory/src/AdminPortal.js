@@ -2,7 +2,7 @@ import styles from './AdminPortal.module.css';
 import {Outlet,useLocation, useNavigate} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { useState } from "react";
+import React, { useState } from 'react';
 import { logOut } from './requests';
 function AdminPortal() {
   let location=useLocation();  

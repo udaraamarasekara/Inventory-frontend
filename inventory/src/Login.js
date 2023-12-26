@@ -1,6 +1,6 @@
 import styles from './Login.module.css';
 import Api from './Api';
-import { useRef, useState } from 'react';
+import React,{ useRef, useState } from 'react';
 import {useLoaderData, useNavigate } from 'react-router-dom';
 import CheckedBox from './CheckedBox';
 function Login() {
@@ -29,14 +29,11 @@ const  loginSubmit = async ()=>{
       Api.post('api/login',data).then((res)=>{
         if(res.data.error)
         {
-          alert('1');  
-
         popupToggle.current.style.display="block";
         setTimeout(()=>popupToggle.current.style.display="none", 1200);
         } 
-        else if(res==='Invalid request!')
+        else if(res==='Invalid request!' || res.data.user==='Invalid Entry' )
         {
-        alert('2');  
         localStorage.getItem('auth') && localStorage.removeItem('auth');
         navigate('/login');
         }

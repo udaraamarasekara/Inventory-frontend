@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from './CustomSelect.module.css';
-import { useRef, useState } from 'react';
+import React,{ useRef, useState } from 'react';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
 function CustomSelect({optionData,setCurrentVal}){

@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from './AdminDashboard.module.css';
 import RadioButton from './RadioButton';
-import {useState } from 'react';
+import React, { useState } from 'react';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
 function AdminProduct() {

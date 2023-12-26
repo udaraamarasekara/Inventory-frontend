@@ -2,7 +2,7 @@ import styles from './AdminDashboard.module.css';
 import AutocompleteSearch from './AutocompleteSearch';
 import CustomSelect from './CustomSelect';
 import RadioButton from './RadioButton';
-import {useState } from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 function AdminDashboard() {
   const availableProducts=useLoaderData();
@@ -11,7 +11,7 @@ function AdminDashboard() {
    <div>
     { window.innerWidth > 768 ?(
      <div> 
-        <input type="text" placeholder="Search" className={styles.Input}></input>
+        <AutocompleteSearch url={'search'+name}/>
         <div className={styles.RadioButtonsArea}>
           <div className={styles.Quater}>
             <RadioButton   text="All"  setName={setName} name={name}   value="All"/> 
@@ -29,9 +29,9 @@ function AdminDashboard() {
      </div> 
       ):
       (
-       <div> 
+       <div > 
         <CustomSelect setCurrentVal={setName} optionData={['All','Projects','People','Products']} />
-        <AutocompleteSearch/>
+        <AutocompleteSearch url={'search'+name}/>
        </div>
       )} 
       <div className={styles.CardsArea}>
