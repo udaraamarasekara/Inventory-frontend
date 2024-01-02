@@ -1,37 +1,20 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import styles from './AdminDashboard.module.css';
+import styles from './AdminDashboardAndPManager.module.css';
 import RadioButton from './RadioButton';
 import React, { useState } from 'react';
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
+import CustomSelect from './CustomSelect';
+function AdminProductManager() {
 
-function AdminProduct() {
-
-  const [name,setName]=useState("All");
-  const [SelectActive,setSelectActive]=useState(false);
-  const [options,setOptions]=useState(styles.options);
-
-
-  const toggle=()=>
-  {
-    if(SelectActive)
-    {
-      setOptions(styles.fOut);
-      window.setTimeout(function () {
-        setSelectActive(false);
-  
-      // do stuff after animation has finished here
-  }, 600);
-    }else{
-      setOptions(styles.options);
-      setSelectActive(true);
-
-    }
-
-  }
+  const [name,setName]=useState("AllTime");
+  const [screen,setScreen]=useState(window.innerWidth);
+  window.onresize = function() {
+   setScreen(window.innerWidth)
+};
   return (
    <div>
-    <input type="text" placeholder="Search" className={styles.Input}></input>
-    { window.innerWidth > 768 ?(
+    <div className={styles.ButtonsArea}>
+      <button className={styles.Button} >f</button>
+    </div>
+    { screen > 768 ?(
       <div className={styles.RadioButtonsArea}>
         <div className={styles.Quater} >
           <RadioButton   text="All time"  setName={setName} name={name}   value="AllTime"/> 
@@ -51,39 +34,37 @@ function AdminProduct() {
       </div>
       ):
       (
-        <div>
-          <div className={SelectActive ? styles.SelectActive:styles.Select} onClick={toggle} >
-            <input type="text" readOnly className={styles.Input}></input>
-            <FontAwesomeIcon  className={SelectActive ? styles.TurnedIcon:styles.NormalIcon} icon={faCaretDown}></FontAwesomeIcon>
-           
-          </div>
-          {SelectActive && 
-          <div  className={options} >
-              <div  className={styles.option}>
-              
-              </div>
-          </div>
-          }
-          <div>
-          </div>  
-        </div>
+        <CustomSelect setCurrentVal={setName} optionData={['All','Projects','People','Products']} />
+
       )} 
       <div className={styles.CardsArea}>
-        <div className={styles.Card}>
-          <h2>h5tgt</h2>  
+        <div className={styles.CardP}>
+          <h2 className={styles.CardText} >h5tgt</h2>  
+          <h2 className={styles.CardText} >h5tgt</h2>  
+
+          <p className={styles.DetailedView}>Detailed view</p>
         </div>
-        <div  className={styles.Card}>
-          <h2>h5tgt</h2>  
+        <div  className={styles.CardP}>
+           <h2 className={styles.CardText} >h5tgt</h2>  
+           <h2 className={styles.CardText} >h5tgt</h2>  
+           <p className={styles.DetailedView}>Detailed view</p>
+
         </div>
-        <div  className={styles.Card}>
-          <h2>h5tgt</h2>  
+        <div  className={styles.CardP}>
+           <h2 className={styles.CardText} >h5tgt</h2>  
+           <h2 className={styles.CardText} >h5tgt</h2>  
+           <p className={styles.DetailedView}>Detailed view</p>
+
         </div>
-        <div  className={styles.Card}>
-          <h2>h5tgt</h2>    
+        <div  className={styles.CardP}>
+           <h2 className={styles.CardText} >h5tgt</h2>  
+           <h2 className={styles.CardText} >h5tgt</h2>  
+           <p className={styles.DetailedView}>Detailed view</p>
+
         </div>
       </div>
     </div>   
   );
 }
 
-export default AdminProduct;
+export default AdminProductManager;

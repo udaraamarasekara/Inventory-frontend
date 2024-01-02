@@ -1,4 +1,4 @@
-import styles from './AdminDashboard.module.css';
+import styles from './AdminDashboardAndPManager.module.css';
 import AutocompleteSearch from './AutocompleteSearch';
 import CustomSelect from './CustomSelect';
 import RadioButton from './RadioButton';
@@ -7,11 +7,16 @@ import { useLoaderData } from 'react-router-dom';
 function AdminDashboard() {
   const availableProducts=useLoaderData();
   const [name,setName]=useState("All");
+  const [screen,setScreen]=useState(window.innerWidth);
+  window.onresize = function() {
+   setScreen(window.innerWidth)
+};
+
   return (
    <div>
-    { window.innerWidth > 768 ?(
+    { screen > 768 ?(
      <div> 
-        <AutocompleteSearch url={'search'+name}/>
+        <AutocompleteSearch url={'search'+name} redirectUrl={'searchResults'}/>
         <div className={styles.RadioButtonsArea}>
           <div className={styles.Quater}>
             <RadioButton   text="All"  setName={setName} name={name}   value="All"/> 

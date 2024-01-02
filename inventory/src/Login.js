@@ -2,14 +2,28 @@ import styles from './Login.module.css';
 import Api from './Api';
 import React,{ useRef, useState } from 'react';
 import {useLoaderData, useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import CheckedBox from './CheckedBox';
+import { faEye } from '@fortawesome/free-solid-svg-icons';
 function Login() {
 const emailInput =useRef('');
 const passwordInput= useRef('');
 const popupToggle=useRef();
+const [password,setPassword]=useState('password');
 const logStatus = useLoaderData();
 const [remember,setRemember]=useState(false);
 const navigate=useNavigate();
+
+const togglePasswordField =()=>{
+  if(password=='text')
+  {
+   setPassword('password');
+  }else{
+   setPassword('text');
+  }
+}
+
 const  loginSubmit = async ()=>{
   const data={
     email:emailInput.current.value,
@@ -61,8 +75,12 @@ const  loginSubmit = async ()=>{
         Invalid entry !
       </div>
       <h1 className={styles.Heading} >Login</h1>
-      <input placeholder="Email" ref={emailInput} className={styles.Input} type="text"/>
-      <input placeholder="Password" ref={passwordInput} className={styles.Input} type="text"/>
+      <input placeholder="Email" ref={emailInput} className={styles.Email} type="text"/>
+      <div className={styles.PasswordWrapper} >
+        <input className={styles.Password} placeholder="Password" ref={passwordInput}  type={password}/>
+        <FontAwesomeIcon className={styles.Eye} onClick={togglePasswordField} icon={faEye}></FontAwesomeIcon>
+      </div>
+      
       <CheckedBox status={remember} setStatus={setRemember} />
       <input className={styles.Button} onClick={loginSubmit} type="submit"/>
     </div>

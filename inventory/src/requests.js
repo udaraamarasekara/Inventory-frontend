@@ -23,3 +23,14 @@ export const logOut =async ()=>{
    console.log(response);
    localStorage.removeItem('auth');
 }
+
+export const singleItem =async (params)=>{
+  let response;
+   await  Api.get('api/singleItem/'+params.params.obj+'/'+params.params.id).then((res)=>{
+     response=res.data.data;
+   }).catch((error)=> {
+    localStorage.removeItem('auth');
+    response={error:error};
+   })
+  return {'type':params.params.obj,'response': response};
+}

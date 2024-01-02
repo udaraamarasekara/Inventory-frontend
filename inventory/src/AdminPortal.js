@@ -7,6 +7,10 @@ import { logOut } from './requests';
 function AdminPortal() {
   let location=useLocation();  
   const nav = useNavigate();
+  const [screen,setScreen]=useState(window.innerWidth);
+  window.onresize = function() {
+   setScreen(window.innerWidth)
+};
 
   const logoutUser =() =>{
    logOut(); 
@@ -16,7 +20,7 @@ function AdminPortal() {
   const [mobileNavShow,setMobileNavShow]=useState(false);
   return (
     <div className={styles.Page}>
-     {window.innerWidth>=768 && (
+     {screen >=768 && (
         
       <div className={styles.SideNav}>
          <div className={styles.ProfilePicture}>
@@ -43,7 +47,7 @@ function AdminPortal() {
       <div className={styles.RestPage}>
          <div className={styles.NavBar}>
             {
-             window.innerWidth<768 &&
+             screen <768 &&
              (
               <FontAwesomeIcon onClick={()=>setMobileNavShow(!mobileNavShow)} className={styles.MenuIcon} icon={faBars}></FontAwesomeIcon>
              )  
@@ -51,7 +55,7 @@ function AdminPortal() {
             <div className={styles.Logout} onClick={logoutUser}>Logout</div>
          </div>
          {
-          window.innerWidth < 768 && mobileNavShow &&  
+          screen < 768 && mobileNavShow &&  
           (
             <div className={styles.MobileNav}>
                <div className={location.pathname==='/dashboard'? styles.SelectedNavItem : styles.NavItem}>
