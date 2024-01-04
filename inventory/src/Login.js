@@ -16,7 +16,7 @@ const [remember,setRemember]=useState(false);
 const navigate=useNavigate();
 
 const togglePasswordField =()=>{
-  if(password=='text')
+  if(password==='text')
   {
    setPassword('password');
   }else{
@@ -48,12 +48,12 @@ const  loginSubmit = async ()=>{
         } 
         else if(res==='Invalid request!' || res.data.user==='Invalid Entry' )
         {
-        localStorage.getItem('auth') && localStorage.removeItem('auth');
+        sessionStorage.getItem('auth') && sessionStorage.removeItem('auth');
         navigate('/login');
         }
         else
         {
-         localStorage.setItem('auth',true);
+         sessionStorage.setItem('auth',true);
         navigate('/');
         }
       }).catch((e)=>

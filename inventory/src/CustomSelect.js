@@ -23,6 +23,7 @@ if(clicked.current && !clicked.current.contains(e.target)){
 }, 600);
 }
 }
+ 
 const changeValue=(value)=>
 {
     setName(value);
@@ -32,6 +33,9 @@ const changeValue=(value)=>
 
 const toggle=()=>
 {
+  document.documentElement.style.setProperty('--optionWidth',clicked.current.offsetWidth*0.86+'px');
+    document.documentElement.style.setProperty('--marginLeft',clicked.current.offsetWidth*0.07+'px');
+
   setArrowIcon(!arrowIcon);
   if(SelectActive)
   {

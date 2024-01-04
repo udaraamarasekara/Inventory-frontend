@@ -1,3 +1,9 @@
+
+:root{
+ --optionWidth:86%;
+ --marginLeft:7%;
+ --Height:140px;
+}
 .SelectIcon{
     float: left;
     background-color:#E6EEFF;
@@ -24,11 +30,10 @@
   
   }
   .options{
-    width:86%;
+    width:var(--optionWidth);
     background-color: white;
-    height:140px;
-    margin-left:7%;
-    margin-right:3%;
+    height:auto;
+    margin-left:var(--marginLeft);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     animation: fadeIn 0.6s ease-in; 
     position: fixed;
@@ -79,6 +84,10 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     animation: fadeOut 0.6s ease-in;
     position: fixed;
+    height:auto;
+    margin-left:var(--marginLeft);
+    width:var(--optionWidth);
+
   }
   
   .SelectActive{

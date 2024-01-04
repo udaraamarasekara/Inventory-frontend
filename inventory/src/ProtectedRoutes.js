@@ -4,9 +4,9 @@ import { Navigate, Outlet } from "react-router-dom";
 
 const ProtectedRoutes = () => {
 	// TODO: Use authentication token
-	const localStorageToken = localStorage.getItem("auth");
+	const sessionStorageToken = sessionStorage.getItem("auth");
 
-	return localStorageToken ? <Outlet /> : <Navigate to="/login"  replace />;
+	return sessionStorageToken ? <Outlet /> : <Navigate to="/login"  replace />;
 };
 
 export default ProtectedRoutes;

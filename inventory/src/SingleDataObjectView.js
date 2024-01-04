@@ -31,7 +31,7 @@ return(
          <div className={styles.Heading}>
             {data.response.name}  -  {data.type}
         </div>
-        {Object.entries(data.response).filter(([key,value])=>{return key!=='id'} ).map(([key,value])=>{
+        {Object.entries(data.response).filter(([key,value])=>{return key!=='id' } ).map(([key,value])=>{
           return <div key={key} className={styles.RestData}>
                {key} - {value}       
           </div>

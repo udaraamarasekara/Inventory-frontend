@@ -7,16 +7,17 @@ import ProtectedRoutes from './ProtectedRoutes';
 import React from 'react';
 import SingleDataObject from './SingleDataObjectView';
 import AdminProductManager from './AdminProductManager';
+import SalesAndReceived from './SalesAndReceived';
   const routes = createBrowserRouter(
     createRoutesFromElements(
     <>
-      <Route path='/' element={<ProtectedRoutes/>}>
+      <Route path='/' loader={All.testRequest} element={<ProtectedRoutes/>}>
         <Route path='/' element={<AdminPortal/>}>
           <Route loader={All.goodsCount} path='/dashboard'  element={<AdminDashboard/>}/>
           <Route loader={(params)=>{ return All.singleItem(params)}} path='/searchResults/:obj/:id'  element={<SingleDataObject/>}/>
-          <Route path='/productManager' element={<AdminProductManager/>}/>
-        </Route>
-        
+          <Route path='/productManager' loader={All.productTransactions} element={<AdminProductManager/>}/>
+          <Route path='/salesAndReceived' loader={All.allGoods} element={<SalesAndReceived/>}/>
+        </Route>  
       </Route>
       <Route path='*' element={<Login/>}/>
     </>

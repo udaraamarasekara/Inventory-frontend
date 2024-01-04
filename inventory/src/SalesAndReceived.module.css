@@ -1,0 +1,113 @@
+.SelectionsContainer{
+    margin-top: 2%;
+    margin-left:7%;
+    margin-right:7%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.Pack{
+   display: flex;
+   width: 100%; 
+}
+
+.Button{
+  background-color:#F55733 ;
+  color: white;
+  border:2px solid #E03F34;
+  width:6%;
+  padding-top:0.7%;
+  padding-bottom:0.7%;
+  margin-left: 2%;
+  margin-right: 2%;
+ }
+ 
+.ButtonsContainer{
+  display:flex;
+  flex-direction: row;
+  margin: 3%;
+  justify-content: center;
+}
+
+ .Button:hover{
+   cursor: pointer;
+ }
+
+.TableContainer{
+  overflow-x: auto;
+}
+
+.TableStyle{
+  table-layout: fixed;
+  width: 94%;
+  margin: 3%;
+  min-width:1000px ;
+
+}
+
+.TableHeader{
+  color: white;  
+  background-color:#0040FF ;
+
+}
+.TableRow:nth-child(even) {background-color: #E6EEFF;}
+.TableRow{
+min-height:165px;
+}
+.Input{
+    background-color:#E6EEFF;
+    font-size: large;
+    color: rgba(0,0,0,0.5);
+    width:80%;
+    margin-left:7%;
+    margin-right:7%;
+    height:6vh;
+    margin-top: 4%;
+    border-radius:5px;
+    outline:none;
+    border: none;
+    padding-right:3%;
+    padding-left:3%;
+  }
+
+  .DataCell{
+    text-align: center;
+  }
+
+@media only screen and (max-width: 768px) {
+  .Pack{
+    flex-direction: column;
+ }
+ .SelectionsContainer{
+  flex-direction: column;
+
+ }
+ .OneThird{
+  width: 100%;
+
+}
+.lbl{
+  align-self: left;  
+  margin-left:7%;
+}
+
+}
+
+@media only screen and (min-width: 768px) {
+  .Pack{
+    flex-direction: row;
+ }
+ .lbl{
+  align-self: center;  
+}
+ .SelectionsContainer{
+  flex-direction: row;
+
+ }
+ .OneThird{
+  width: 21.3%;
+
+}
+}

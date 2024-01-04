@@ -64,6 +64,10 @@
     padding-bottom: 5%;
   
   }
+  .Button{
+    font-size: xx-small;
+  
+  }
   .Card{
     height:100px;
     padding-top: 8px;
@@ -111,6 +115,7 @@
     overflow-x: hidden;
 
   }
+
   
 }
 .CardText{
@@ -130,13 +135,21 @@
   margin: 3%;
   margin-left:7%;
   margin-right:7%;
-
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .Button{
  background-color:#F55733 ;
  color: white;
  border:2px solid #E03F34;
+ width:18%;
+ margin-left: 2%;
+ margin-right: 2%;
+}
+
+.Button:hover{
+  cursor: pointer;
 }
 
 .DetailedView:hover{
