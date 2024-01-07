@@ -55,7 +55,6 @@ export const allGoods=async()=>{
     sessionStorage.removeItem('auth');
     response={error:error};
    })
-   console.log(response);
   return response;
 }
 export const testRequest =async()=>{
@@ -66,9 +65,127 @@ export const testRequest =async()=>{
    sessionStorage.removeItem('auth');
    response={error:error};
   })
-  console.log(response);
   if(response===1){
     sessionStorage.setItem('auth',true);
   }
  return response;
+}
+
+export const allGoodsPaginate=async(link)=>{
+  let response;
+   await  Api.get('api/good/'+link).then((res)=>{
+     response=res.data;
+   }).catch((error)=> {
+    sessionStorage.removeItem('auth');
+    response={error:error};
+   })
+  return response;
+}
+
+export const allTimeGrns=async()=>{
+  let response;
+   await  Api.get('api/allTimeGrns').then((res)=>{
+     response=res.data;
+   }).catch((error)=> {
+    sessionStorage.removeItem('auth');
+    response={error:error};
+   })
+  return response;
+}
+
+export const allTimeGrnsPaginate=async(link)=>{
+  let response;
+   await  Api.get('api/allTimeGrns/'+link).then((res)=>{
+     response=res.data;
+   }).catch((error)=> {
+    sessionStorage.removeItem('auth');
+    response={error:error};
+   })
+  return response;
+}
+export const allTimeSales=async()=>{
+  let response;
+   await  Api.get('api/allTimeSales').then((res)=>{
+     response=res.data;
+   }).catch((error)=> {
+    sessionStorage.removeItem('auth');
+    response={error:error};
+   })
+  return response;
+}
+
+export const allTimeSalesPaginate=async(link)=>{
+  let response;
+   await  Api.get('api/allTimeSales/'+link).then((res)=>{
+     response=res.data;
+   }).catch((error)=> {
+    sessionStorage.removeItem('auth');
+    response={error:error};
+   })
+  return response;
+}
+
+export const allGoodsWithTime=async(from,to)=>{
+  let response;
+   await  Api.get('api/allGoodsWithinPeriod/?to='+to+'&from='+from).then((res)=>{
+     response=res.data;
+   }).catch((error)=> {
+    sessionStorage.removeItem('auth');
+    response={error:error};
+   })
+  return response;
+}
+
+export const allGoodsWithTimePaginate=async(page,from,to)=>{
+  let response;
+   await  Api.get('api/allGoodsWithinPeriod/'+page+'&to='+to+'&from='+from).then((res)=>{
+     response=res.data;
+   }).catch((error)=> {
+    sessionStorage.removeItem('auth');
+    response={error:error};
+   })
+  return response;
+}
+
+export const allSales=async(from,to)=>{
+  let response;
+   await  Api.get('api/sales/?to='+to+'&from='+from).then((res)=>{
+     response=res.data;
+   }).catch((error)=> {
+    sessionStorage.removeItem('auth');
+    response={error:error};
+   })
+  return response;
+}
+
+export const allSalesPaginate=async(page,from,to)=>{
+  let response;
+   await  Api.get('api/sales/'+page+'&to='+to+'&from='+from).then((res)=>{
+     response=res.data;
+   }).catch((error)=> {
+    sessionStorage.removeItem('auth');
+    response={error:error};
+   })
+  return response;
+}
+
+export const allGrns=async(from,to)=>{
+  let response;
+   await  Api.get('api/grns/?to='+to+'&from='+from).then((res)=>{
+     response=res.data;
+   }).catch((error)=> {
+    sessionStorage.removeItem('auth');
+    response={error:error};
+   })
+  return response;
+}
+export const allGrnsPaginate=async(page,from,to)=>{
+  let response;
+   await  Api.get('api/grns/'+page+'&to='+to+'&from='+from).then((res)=>{
+     response=res.data;
+   }).catch((error)=> {
+    sessionStorage.removeItem('auth');
+    response={error:error};
+   })
+  return response;
 }

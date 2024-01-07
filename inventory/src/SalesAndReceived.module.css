@@ -107,7 +107,47 @@ min-height:165px;
 
  }
  .OneThird{
-  width: 21.3%;
+  width: 19%;
+}
+.SearchButtonContainer{
+  width:3%;
+  margin-top: 1%;
+  margin-right:7%;
+}
+}
+
+.CheckedBox{
+  margin-top: 3%;
+  width: 15.2%;
+  height: 2%;
+  margin-left: 7%;
+  padding-left: 0.93%;
+ 
+}
+
+.SearchButton{
+  background-color:#008000;
+  color:white;
+  width:100px;
+  height: 45px;
+
+  border: none;
+}
+
+.SearchButton:hover{
+  cursor: pointer;
+}
+.ErrorLbl{
+  color: red;
+  text-align: right;
+  width: 100%;
+  float: right;
+  margin-right:7%;
 
 }
+
+.NoData{
+  width: 80%;
+  margin: 10%;
+  float: center;
 }
